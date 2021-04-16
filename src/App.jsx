@@ -7,10 +7,10 @@ function App() {
     const cols = ['Name', 'Username', 'Email', 'Website', '']
     const [users, setUsers] = useState([])
     useEffect(() => {
-        (async () => {
-            const data = await fetch('https://jsonplaceholder.typicode.com/users').then(r => r.json())
+        (async (url) => {
+            const data = await fetch(url).then(r => r.json())
             setUsers(data)
-        })()
+        })('https://jsonplaceholder.typicode.com/users')
     }, [])
     return (
         <div className="container">
