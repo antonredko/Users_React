@@ -1,34 +1,20 @@
 import './List.css'
-import React, { useState } from "react"
+import React from "react"
 
-function ListItem(props) {
-    return (
-        <tr className="user">
-            <td>{props.name}</td>
-            <td>{props.username}</td>
-            <td>{props.email}</td>
-            <td>{props.website}</td>
-            <td>
-                <button className="remove_user_btn"></button>
-            </td>
-        </tr>
-    )
-}
-
-function List(props) {
+export default function List({list}) {
     return (
         <tbody className="table_body">
-            {props.list.map((user) => (
-                <ListItem
-                    key={user.id}
-                    name={user.name}
-                    username={user.username}
-                    email={user.email}
-                    website={user.website}
-                />
+            {list.map((user, index) => (
+                <tr className="user" key={index}>
+                    <td>{user.name}</td>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                    <td>{user.website}</td>
+                    <td>
+                        <button className="remove_user_btn"></button>
+                    </td>
+                </tr>
             ))}
         </tbody>
     )
 }
-
-export default List

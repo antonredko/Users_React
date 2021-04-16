@@ -1,22 +1,16 @@
 import './Head.css'
 import React from 'react'
 
-function HeadItem(props) {
-    return (
-        props.col.length > 0
-            ? <th scope="col" className="table_col">{props.col}</th>
-            : <th scope="col"></th>
-    )
-}
-
-function Head(props) {
+export default function Head({cols}) {
     return (
         <thead className="table_head">
             <tr>
-                {props.cols.map((col, index) => <HeadItem col={col} key={index}/>)}
+                {cols.map((col, index) => 
+                    col.length
+                    ? <th scope="col" className="table_col" key={index}>{col}</th>
+                    : <th scope="col" key={index}></th>
+                )}
             </tr>
         </thead>
     )
 }
-
-export default Head
