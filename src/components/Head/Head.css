@@ -1,0 +1,17 @@
+.table_head{
+    font-weight: 700;
+    border-bottom: 2px solid #f3f3f3;
+    padding: 20px;
+    background-color: #6eb5c0;
+}
+.table_head th{
+    padding: 0 10px;
+    line-height: 2;
+    letter-spacing: 2px;
+    text-align: left;
+    transition: .3s;
+    position: relative;
+}
+.table_head th:not(:last-child){
+    cursor: pointer;
+}
